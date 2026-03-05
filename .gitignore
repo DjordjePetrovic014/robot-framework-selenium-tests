@@ -1,0 +1,9 @@
+Results/
+output.xml
+log.html
+report.html
+*.png
+
+.idea/
+__pycache__/
+*.pyc
