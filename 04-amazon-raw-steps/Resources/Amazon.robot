@@ -1,28 +1,27 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/PO/LandingPage.robot
+Resource    ../Resources/PO/Cart.robot
+Resource    ../Resources/PO/Product.robot
+Resource    ../Resources/PO/SearchResults.robot
+Resource    ../Resources/PO/SignIn.robot
+Resource    ../Resources/PO/TopNav.robot
 
 *** Keywords ***
-Search For Products
-    Go To                                   http://www.amazon.com/
-    Wait Until Page Contains Element        id=twotabsearchtextbox    15s
-    Input Text                              id=twotabsearchtextbox      Ferrari 458
-    Click element                           id=nav-search-submit-button
-    Wait Until Page Contains                results for "Ferrari 458"
-
+Search for Products
+    LandingPage.Load
+    LandingPage.Verify Page Loaded
+    TopNav.Search for Products
+    SearchResults.Verify Search Completed
 
 Select Product from Search Results
-    Click Element                           css=div[data-component-type="s-search-result"]
-    Wait Until Page Contains                Buy Now
+    SearchResults.Click Product link
+    Product.Verify Page Loaded
 
-
-Add Product To Cart
-    Click Button                            id=add-to-cart-button
-    Wait Until Page Contains                Added to Cart
-
+Add Product to Cart
+    Product.Add to Cart
+    Cart.Verify Product Added
 
 Begin Checkout
-    Click element                           proceedToRetailCheckout
-    Page Should Contain Element             claim-collection-container
-    Element Text Should Be                  css=.a-size-medium-plus.a-spacing-small   Sign in or create account
-
-
+    Cart.Proceed to Checkout
+    SignIn.Verify Page Loaded
