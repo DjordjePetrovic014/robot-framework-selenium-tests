@@ -5,6 +5,9 @@ Resource            ../Resources/AmazonApp.robot  # for lower level keywords in 
 Test Setup          Common.Begin Web Test
 Test Teardown       Common.End Web Test
 
+# Run the script:
+# robot -d 11-variables-end-amazon-refactoring-po\Results  11-variables-end-amazon-refactoring-po\Tests\Amazon.robot
+
 *** Variables ***
 ${BROWSER} =        chrome
 ${START_URL} =      https://www.amazon.com
