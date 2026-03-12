@@ -6,7 +6,7 @@ Test Setup          Common.Begin Web Test
 Test Teardown       Common.End Web Test
 
 # Run the script:
-# robot -d 11-variables-end-amazon-refactoring-po\Results  11-variables-end-amazon-refactoring-po\Tests\Amazon.robot
+#  robot -d 50-locators-css-xpath\Results  50-locators-css-xpath\Tests\Amazon.robot
 
 *** Variables ***
 ${BROWSER} =        chrome
