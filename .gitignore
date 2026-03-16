@@ -7,3 +7,5 @@ report.html
 .idea/
 __pycache__/
 *.pyc
+
+### Ignoring on github
