@@ -2,6 +2,8 @@
 
 
 *** Test Cases ***
+## Test cases and logs
+
 Test case 1
     Do Something
     Do Something Else
